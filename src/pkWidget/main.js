@@ -21,7 +21,7 @@ export default class pkWidget {
 
     this.content = document.createElement('div');
     this.div.appendChild(this.content);
-    this.content.className = 'content';
+    this.content.className = 'widgetContent';
 
     this.modal = document.createElement('div');
     this.div.appendChild(this.modal);
@@ -52,7 +52,12 @@ export default class pkWidget {
     const close = this.modal.querySelector('.close');
     close.addEventListener('click', () => this.modal.classList.add('hidden'));
     signUp.addEventListener('click', () => window.open(`https://panel.patchkit.net/users/register?email=${input.value}`, '_blank'));
-
+    input.addEventListener("keypress", function(e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        signUp.click();
+      }
+    });
     this.setView(View.file);
   }
 
