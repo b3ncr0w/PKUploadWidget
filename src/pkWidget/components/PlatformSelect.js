@@ -1,5 +1,5 @@
 import Component from './Component.js';
-import Dropdown from './_Dropdown.js';
+import Dropdown from './Dropdown.js';
 import { sleep } from '../utils.js';
 
 export default class PlatformSelect extends Component {

@@ -1,5 +1,5 @@
-import dashed from './_dashed.js';
-import ProgressRing from './_ProgressRing.js';
+import dashed from './dashed.js';
+import ProgressRing from './ProgressRing.js';
 import { FileInputState } from '../main.js';
 import Component from './Component.js';
 import { sleep, bitSizeToMB } from '../utils.js';
