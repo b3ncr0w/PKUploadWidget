@@ -1,6 +1,5 @@
 import { requestUpload, requestCreateApp, requestProcess, requestProcessingStatus, requestPublish, requestPublishingStatus, requestFetchApp } from './request.js';
 import { getEntriesFromZip, validateZip, recognizePlatform, setUploadData, chunkedFileUpload } from './utils.js';
-import Alert from './Alert.js';
 
 export const validate = async (file) => {
   const archiveEntries = await getEntriesFromZip(file);
@@ -11,7 +10,6 @@ export const validate = async (file) => {
 
 export const detectPlatforms = async (archiveEntries) => {
   const exeArr = await recognizePlatform(archiveEntries);
-  if (exeArr.length === 0) Alert('No executable found in given archive', 'error');
   if (!exeArr || exeArr.length === 0) return;
 
   const platformArr = [...new Set(exeArr.map((exe) => exe.platform))];

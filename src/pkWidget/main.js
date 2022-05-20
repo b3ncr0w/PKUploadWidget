@@ -68,8 +68,14 @@ export default class pkWidget {
         this.C.stepProgress.setActiveByIndex(0);
 
         this.C.fileInput.onChange = async (file) => {   
-          const [ archiveEntries, isValidated, errorMessage ] = await validate(file);
-    
+          let [ archiveEntries, isValidated, errorMessage ] = await validate(file);
+
+          const platforms = await detectPlatforms(archiveEntries);
+          if (!platforms || platforms.length === 0) {
+            isValidated = false;
+            errorMessage = 'No executable found in given archive';
+          }
+
           if (isValidated) {
             this.C.fileInput.setState(FileInputState.uploading);
             upload({ file: file }, {
@@ -77,7 +83,8 @@ export default class pkWidget {
                 entries: archiveEntries,
                 file: file,
                 filesCount: archiveEntries.length,
-                uploadId: uploadId
+                uploadId: uploadId,
+                platforms: platforms
               }),
               progress: (percentage) => this.C.fileInput.progressRing.setValue(parseInt(percentage)),
               error: () => {
@@ -97,8 +104,6 @@ export default class pkWidget {
       break;
 
       case View.summary:
-        const platforms = await detectPlatforms(data.entries);
-
         this.C.fileInputLabel.appendTo(this.content);
         this.C.fileInputLabel.collapse(true, 0);
 
@@ -118,7 +123,7 @@ export default class pkWidget {
         this.C.platformSelectLabel.fadeIn();
 
         this.C.platformSelect.appendTo(this.content);
-        this.C.platformSelect.setValue(platforms[0]);
+        this.C.platformSelect.setValue(data.platforms[0]);
         this.C.platformSelect.fadeIn();
 
         this.C.processButton.onClick = async () => {
