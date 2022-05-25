@@ -2,7 +2,7 @@ import Component from './Component.js';
 
 export default class Progress extends Component {
   constructor() {
-    super('progress');
+    super('widgetProgress');
 
     this.url = undefined;
     this.onReset = undefined;

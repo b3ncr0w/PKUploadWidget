@@ -34,7 +34,7 @@ export default class FileInput extends Component {
         setTimeout(() => {
           this.div.classList.remove('hover');
           this.div.classList.remove('error');
-          this.div.classList.remove('collapse');
+          this.div.classList.remove('componentCollapse');
         }, 100);
         this.showInput();
         await this.fadeOutContent(0);
@@ -50,7 +50,7 @@ export default class FileInput extends Component {
       break;
 
       case FileInputState.summary:
-        this.div.classList.add('collapse');
+        this.div.classList.add('componentCollapse');
         await sleep(500);
         this.showSummary();
         await this.fadeOutContent(0);

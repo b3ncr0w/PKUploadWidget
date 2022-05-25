@@ -24,7 +24,7 @@
           user-select: none;
 }
 
-.pkWidget .topBar {
+.pkWidget .widgetTopBar {
   width: 100%;
   min-height: 80px;
 }
@@ -35,7 +35,7 @@
   height: 100%;
 }
 
-.pkWidget .modal {
+.pkWidget .widgetModal {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -60,13 +60,13 @@
           align-items: center;
 }
 
-.pkWidget .modal.hidden {
+.pkWidget .widgetModal.hidden {
   pointer-events: none;
   opacity: 0;
   visibility: 'hidden';
 }
 
-.pkWidget .modal .close {
+.pkWidget .widgetModal .modalClose {
   width: 100px;
   height: 100px;
   position: absolute;
@@ -85,11 +85,11 @@
   font-size: 24px;
 }
 
-.pkWidget .modal .close:hover {
+.pkWidget .widgetModal .modalClose:hover {
   color: #d63939;
 }
 
-.pkWidget .modal div {
+.pkWidget .widgetModal div {
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -106,17 +106,17 @@
           align-items: center;
 }
 
-.pkWidget .modal div .primary {
+.pkWidget .widgetModal div .primary {
   font-size: 24px;
   line-height: 32px;
 }
 
-.pkWidget .modal div .secondary {
+.pkWidget .widgetModal div .secondary {
   font-size: 16px;
   line-height: 24px;
 }
 
-.pkWidget .modal div .form {
+.pkWidget .widgetModal div .form {
   width: 100%;
   height: 56px;
   margin-top: 32px;
@@ -129,7 +129,7 @@
           flex-direction: row;
 }
 
-.pkWidget .modal div .form #signUp {
+.pkWidget .widgetModal div .form #signUp {
   width: 176px;
   margin-left: 12px;
 }
@@ -240,7 +240,7 @@
   background-color: #E8F1F1;
 }
 
-.pkWidget .component {
+.pkWidget .widgetComponent {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: hidden;
@@ -553,7 +553,7 @@
   stroke: #d63939 !important;
 }
 
-.pkWidget .fileInput.collapse {
+.pkWidget .fileInput.componentCollapse {
   height: 72px;
   padding: 0;
   padding-left: 20px;
@@ -572,18 +572,18 @@
   overflow: hidden;
 }
 
-.pkWidget .fileInput.collapse .dashed {
+.pkWidget .fileInput.componentCollapse .dashed {
   -webkit-transition: opacity .3s ease;
   transition: opacity .3s ease;
   opacity: 0;
 }
 
-.pkWidget .fileInput.collapse .icon {
+.pkWidget .fileInput.componentCollapse .icon {
   font-size: 32px;
   margin: 0;
 }
 
-.pkWidget .fileInput.collapse .fileInfo {
+.pkWidget .fileInput.componentCollapse .fileInfo {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -595,11 +595,11 @@
   padding-left: 20px;
 }
 
-.pkWidget .fileInput.collapse .fileInfo .primary {
+.pkWidget .fileInput.componentCollapse .fileInfo .primary {
   margin-bottom: 8px;
 }
 
-.pkWidget .fileInput.collapse .cancel {
+.pkWidget .fileInput.componentCollapse .cancel {
   height: 72px;
   width: 72px;
   display: -webkit-box;
@@ -614,12 +614,12 @@
   cursor: pointer;
 }
 
-.pkWidget .fileInput.collapse .cancel .icon {
+.pkWidget .fileInput.componentCollapse .cancel .icon {
   font-size: 16px;
   opacity: .8;
 }
 
-.pkWidget .fileInput.collapse .cancel:hover .icon {
+.pkWidget .fileInput.componentCollapse .cancel:hover .icon {
   opacity: 1;
   color: #d63939;
 }
@@ -778,7 +778,7 @@
   opacity: 1;
 }
 
-.pkWidget .progress {
+.pkWidget .widgetProgress {
   width: 100%;
   height: 100%;
   margin-top: 40px;
@@ -794,14 +794,14 @@
           align-items: center;
 }
 
-.pkWidget .progress .text {
+.pkWidget .widgetProgress .text {
   margin-bottom: 24px;
   font-size: 32px;
   line-height: 32px;
   font-weight: 800;
 }
 
-.pkWidget .progress .bar {
+.pkWidget .widgetProgress .bar {
   position: relative;
   width: 100%;
   height: 12px;
@@ -811,7 +811,7 @@
   overflow: hidden;
 }
 
-.pkWidget .progress .bar .fill {
+.pkWidget .widgetProgress .bar .fill {
   height: 100%;
   position: absolute;
   left: 0;
@@ -822,7 +822,7 @@
   transition: width .5s ease-out;
 }
 
-.pkWidget .progress .buttons {
+.pkWidget .widgetProgress .buttons {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -834,7 +834,7 @@
       justify-content: space-around;
 }
 
-.pkWidget .progress .buttons .cancelButton {
+.pkWidget .widgetProgress .buttons .cancelButton {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 48%;
@@ -846,12 +846,12 @@
   white-space: nowrap;
 }
 
-.pkWidget .progress .buttons .cancelButton .icon {
+.pkWidget .widgetProgress .buttons .cancelButton .icon {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 
-.pkWidget .progress .buttons .downloadButton {
+.pkWidget .widgetProgress .buttons .downloadButton {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 48%;
@@ -863,7 +863,7 @@
   white-space: nowrap;
 }
 
-.pkWidget .progress .buttons .downloadButton .icon {
+.pkWidget .widgetProgress .buttons .downloadButton .icon {
   margin-right: 8px;
 }
 

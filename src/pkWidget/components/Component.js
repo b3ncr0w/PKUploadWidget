@@ -1,7 +1,7 @@
 export default class Component {
   constructor(className) {
     this.componentDiv = document.createElement('div');
-    this.componentDiv.className = 'component';
+    this.componentDiv.className = 'widgetComponent';
 
     this.div = document.createElement('div');
     this.componentDiv.appendChild(this.div);

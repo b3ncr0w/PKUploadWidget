@@ -17,7 +17,7 @@ export default class pkWidget {
 
     this.topBar = document.createElement('div');
     this.div.appendChild(this.topBar);
-    this.topBar.className = 'topBar';
+    this.topBar.className = 'widgetTopBar';
 
     this.content = document.createElement('div');
     this.div.appendChild(this.content);
@@ -25,7 +25,7 @@ export default class pkWidget {
 
     this.modal = document.createElement('div');
     this.div.appendChild(this.modal);
-    this.modal.className = 'modal hidden';
+    this.modal.className = 'widgetModal hidden';
 
     Alert.setParent(this.content);
 
@@ -45,11 +45,11 @@ export default class pkWidget {
         <div id="signUp" class="btn">Sign up</div>
       </div>
     </div>
-    <div class="close"><i class="icon icon-x"></i></div>
+    <div class="modalClose"><i class="icon icon-x"></i></div>
     `;
     const input = this.modal.querySelector('input#email');
     const signUp = this.modal.querySelector('#signUp');
-    const close = this.modal.querySelector('.close');
+    const close = this.modal.querySelector('.modalClose');
     close.addEventListener('click', () => this.modal.classList.add('hidden'));
     signUp.addEventListener('click', () => window.open(`https://panel.patchkit.net/users/register?email=${input.value}`, '_blank'));
     input.addEventListener("keypress", function(e) {
